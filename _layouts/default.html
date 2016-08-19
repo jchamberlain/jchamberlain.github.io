@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.name }}</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<!-- syntax highlighting CSS -->
+		<link rel="stylesheet" href="{{ site.baseurl }}/css/syntax.css">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/foundation/6.2.3/foundation.min.css">
+
+		<!-- Custom CSS -->
+		<link rel="stylesheet" href="{{ site.baseurl }}/css/main.css">
+
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" rel="stylesheet" />
+		<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+
+	</head>
+	<body>
+		{% for tag in site.tags %}
+			{% assign found = 0 %}
+			{% for tagpage in site.tagpages %}
+				{% if tagpage.tag == tag[0] %}
+					{% assign found = 1 %}
+				{% endif %}
+			{% endfor %}
+
+			{% if found == 0 %}
+				<p><strong>Missing tag page for "{{ tag[0] }}"!</strong></p>
+			{% endif %}
+		{% endfor %}
+
+		{% for tagpage in site.tagpages %}
+			{% assign found = 0 %}
+			{% for tag in site.tags %}
+				{% if tagpage.tag == tag[0] %}
+					{% assign found = 1 %}
+				{% endif %}
+			{% endfor %}
+
+			{% if found == 0 %}
+				<p><strong>Tag page for nonexistent tag "{{ tagpage.tag }}"!</strong></p>
+			{% endif %}
+		{% endfor %}
+		<div id="container" class="row" data-equalizer data-equalize-on="medium">
+
+			<div id="content" class="small-12 medium-8 medium-push-4 columns" data-equalizer-watch>
+				{{ content }}
+			</div>
+
+			<div id="sidebar" class="small-12 medium-3 medium-pull-8 columns" data-equalizer-watch>
+				<header>
+					<h2><a href="{{ site.baseurl }}/">{{ site.name }}</a></h2>
+					<span class="caption">Of the West</span>
+				</header>
+
+				<p>I'm a function that accepts ideas and returns software. Here you may observe some of my side effects.</p>
+				<nav class="tags">
+
+				</nav>
+				<nav class="external">
+					<ul class="external">
+						<li class="fi-social-github"><a href="https://github.com/jchamberlain">jchamberlain</a></li>
+						<li class="fi-social-twitter"><a href="https://twitter.com/jchmbrln">jchmbrln</a></li>
+						<li class="fi-social-linkedin"><a href="https://www.linkedin.com/in/joshua-chamberlain">joshua-chamberlain</a></li>
+					</ul>
+				</nav>
+
+				<div class="footer">
+					&copy; Joshua Chamberlain
+				</div class="footer">
+			</div>
+
+		</div>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/foundation/6.2.3/foundation.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.2.3/plugins/foundation.equalizer.js"></script>
+		<script src="{{ site.baseurl }}/js/main.js"></script>
+	</body>
+</html>
