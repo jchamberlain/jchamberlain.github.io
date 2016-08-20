@@ -2,12 +2,6 @@ body {
     font-family: Lato, Helvetica Neue,Helvetica,Roboto,Arial,sans-serif;
     color: #424242;
 }
-
-/**
- * //////////////////////////
- * Font and link declarations
- * //////////////////////////
- */
 span.time {
     color: #ADADAD;
     margin-bottom: 5px;
@@ -42,73 +36,6 @@ a:hover {
     text-decoration: underline;
 }
 
-
-/**
- * //////////////////////////////////
- * Right aka content column formatting
- * //////////////////////////////////
- */
-div.right {
-    width: 500px;
-    float: left;
-}
-
-div.content {
-    border-top: 1px solid #E6E6E6;
-    margin-top: 5px;
-    padding-top: 5px;
-}
-
-div.content pre {
-    background: #333333;
-    padding: 5px;
-    color: #FFF;
-    overflow-x: auto;
-    font-family: Menlo, Monaco, Consolas, 'Courier New', monospace;
-    font-size: 12px;
-}
-
-div.content .highlight {
-	background: #333333;
-}
-
-/**footer {
-    border-top: 1px solid #E6E6E6;
-    width: 100%;
-    height: 10px;
-    margin-top: 10px;
-    padding-top: 10px;
-    color: #C2C2C2;
-    font-size: 11px;
-    bottom: 0;
-    padding-bottom: 10px;
-}
-
-footer div#github {
-	text-align: right;
-}**/
-
-div.right h1 {
-	margin-bottom: -2px;
-}
-
-div.right ul {
-	list-style: none;
-	margin-left: 0;
-	padding: 0;
-}
-
-div.right ul li {
-	margin-top: 5px;
-	margin-left: 0;
-	padding: 0;
-}
-
-div.right .post ul {
-	list-style: square;
-	margin-left: 15px;
-}
-
 #sidebar {
     padding-bottom: 5em;
     background-color: #34495e;
@@ -123,17 +50,25 @@ div.right .post ul {
     color: #fff;
     text-decoration: none;
 }
+#sidebar h3 {
+    margin-top: 2em;
+    color: #6C7E8F;
+    font-size: 1.5em;
+}
 #sidebar header {
     margin-bottom: 1.5em;
 }
 #sidebar p {
     font-size: 1.1em;
 }
-nav ul.external {
-    padding: 0;
+nav ul {
+    padding:0;
     margin: 1em;
     list-style-type: none;
     line-height: 1.5em;
+}
+nav ul a, nav ul a:link, nav ul a:active {
+    color: #fff;
 }
 nav ul.external li::before {
     margin-right: 0.5em;
@@ -189,63 +124,10 @@ ul.posts li a {
 ul.posts li p {
 
 }
-
-
-/**
- * ///////////////////////////////////
- * Left column aka nav bar formatting
- * ///////////////////////////////////
- */
 span.caption {
     text-align: right;
     display: block;
     font-size: 0.9em;
-}
-div.col-sm-3 {
-        margin-top: 100px;
-        font-size: 11px;
-        color: #666;
-}
-
-div.col-sm-3 strong {
-        font-size: 16px;
-        color: #4A4A4A;
-        font-weight: normal;
-}
-
-div.col-sm-3 div#about {
-        margin-top: 10px;
-		color: #8C8C8C;
-}
-
-div.col-sm-3 img#about {
-    -webkit-border-radius: 150px;
-    margin-bottom: 10px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-
-// for tag cloud and archives
-.tag-cloud {
-  list-style: none;
-  padding: 0;
-  text-align: justify;
-  font-size: 16px;
-  li {
-    display: inline-block;
-    margin: 0 12px 12px 0;
-  }
-}
-#archives {
-  padding: 5px;
-}
-.archive-group {
-  margin: 5px;
-  border-top: 1px solid #ddd;
-}
-.archive-item {
-  margin-left: 5px;
 }
 .post-tags {
   text-align: right;
