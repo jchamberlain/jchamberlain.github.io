@@ -7,4 +7,6 @@ collections:
   tagpages:
     output: true
     permalink: /tags/:path/
+gems:
+  - jekyll-seo-tag
 array: []

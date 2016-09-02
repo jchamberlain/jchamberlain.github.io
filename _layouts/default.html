@@ -17,6 +17,7 @@
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" rel="stylesheet" />
 		<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 
+		{% seo %}
 	</head>
 	<body>
 {% for tag in site.tags %}{% assign found = 0 %}{% for tagpage in site.tagpages %}{% if tagpage.tag == tag[0] %}{% assign found = 1 %}{% endif %}{% endfor %}{% if found == 0 %}<p><strong>Missing tag page for "{{ tag[0] }}"!</strong></p>{% endif %}{% endfor %}{% for tagpage in site.tagpages %}{% assign found = 0 %}{% for tag in site.tags %}{% if tagpage.tag == tag[0] %}{% assign found = 1 %}{% endif %}{% endfor %}{% if found == 0 %}<p><strong>Tag page for nonexistent tag "{{ tagpage.tag }}"!</strong></p>{% endif %}{% endfor %}
