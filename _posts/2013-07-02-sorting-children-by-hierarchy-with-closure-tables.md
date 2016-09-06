@@ -4,6 +4,9 @@ title:  Sorting Children by Hierarchy with Closure Tables
 date:   2013-07-02 21:49:28
 tags: [sql,mysql,hierarchy,recursion]
 excerpt: Unfortunately, this was for a well-established project built on MySQL, so the recursion and Common Table Expressions of SQL Server or PostgreSQL weren't options.
+redirect_from:
+  - /blog/2013/07/sorting-children-by-hierarchy-with-closure-tables/
+  - /2013/07/02/sorting-children-by-hierarchy-with-closure-tables/
 ---
 I recently ran into a problem quite familiar to developers: how to efficiently store and query a complex hierarchy several levels deep? Unfortunately, this was for a well-established project built on MySQL, so the recursion and Common Table Expressions of SQL Server or PostgreSQL weren't options.
 

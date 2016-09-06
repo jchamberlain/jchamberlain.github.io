@@ -4,6 +4,7 @@ title:  Can DevOps Be Outsourced? (And what that means for Rackspace)
 date:   2016-08-31
 tags: [devops, rackspace]
 excerpt: The recent purchase of Rackspace by PE firm Apollo Global Management coincides nicely with the deletion of my company's last Rackspace Cloud server.
+redirect_from: /2016/08/31/can-devops-be-outsourced/
 ---
 
 The recent <a href="http://www.businessinsider.com/rackspace-goes-private-to-focus-on-customer-management-2016-8" target="_blank">purchase of Rackspace</a> by PE firm Apollo Global Management coincides nicely with the deletion of my company's last Rackspace Cloud server. I've long wanted Rackspace to "win" against the likes of Amazon and Microsoft, but their focus on services vs. infrastructure has made good business sense for a while now, so I'm happy they now have more cash to throw at it. Good business sense, however, may not always translate into a working technical solution, as our own experience with Rackspace services suggests.

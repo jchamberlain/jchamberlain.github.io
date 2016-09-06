@@ -2,11 +2,12 @@ name: Zephyri
 markdown: redcarpet
 highlighter: pygments
 baseurl: ''
-permalink: pretty
+permalink: /:year/:title/
 collections:
   tagpages:
     output: true
     permalink: /tags/:path/
 gems:
   - jekyll-seo-tag
+  - jekyll-redirect-from
 array: []

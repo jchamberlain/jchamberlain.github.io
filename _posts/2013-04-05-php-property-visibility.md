@@ -4,6 +4,9 @@ title:  PHP Property Visibilty
 date:   2013-04-05 15:58:00
 tags: [php,oop,encapsulation]
 excerpt: Of course I knew that private properties and methods are visible only to the class that defined them, but one particular implication of that fact had not yet crossed my mind.
+redirect_from:
+  - /blog/2013/04/php-property-visibility/
+  - /2013/04/05/php-property-visibility/
 ---
 It seems like parents just can't keep track of their children these days! A while back I wrote a little code that seemed fine to me but returned a surprising fatal error. Of course I knew that private properties and methods are visible only to the class that defined them, but one particular implication of that fact had not yet crossed my mind. Consider the following bits of code:
 

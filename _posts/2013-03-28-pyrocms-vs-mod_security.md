@@ -4,6 +4,9 @@ title:  PyroCMS vs. mod_security
 date:   2013-03-28 17:32:12
 tags: [apache,pyrocms,mod_security,sql injection]
 excerpt: Upon clicking the last button on the last step of the installation, the whole thing fell apart.
+redirect_from:
+  - /blog/2013/03/pyrocms-vs-mod_security/
+  - /2013/03/28/pyrocms-vs-mod_security/
 ---
 <section class="callout secondary">
 <h3>Update 11 April 2013</h3>

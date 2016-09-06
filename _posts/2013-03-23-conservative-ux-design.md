@@ -4,6 +4,9 @@ title:  Conservative UX Design
 date:   2013-03-23 17:06:32
 tags: [ux]
 excerpt: An excellent principle of web design of which even Russell Kirk would approve.
+redirect_from:
+  - /blog/2013/03/conservative-ux-design/
+  - /2013/03/23/conservative-ux-design/
 ---
 From <a href="http://uxmyths.com/post/712537920/myth-you-need-to-redesign-your-website-periodically" target="_blank">UX Myths</a>:
 
