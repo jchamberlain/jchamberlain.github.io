@@ -1,6 +1,6 @@
 name: Zephyri
-markdown: redcarpet
-highlighter: pygments
+markdown: kramdown
+highlighter: rouge
 baseurl: ''
 permalink: /:year/:title/
 collections:
