@@ -1,14 +1,47 @@
 ---
 layout: default
 ---
+<div class="row">
+  <div id="top" class="small-11 small-centered medium-8 large-6 columns">
+    <header>
+      <h1>{{ site.name }}</h1>
+      <span class="caption">{{ site.caption }}</span>
+    </header>
 
-<h1 class="home">Observations</h1>
-<ul class="posts">
-	{% for post in site.posts %}
-	<li>
-		<span>{{ post.date | date_to_string }}</span>
-		<a href="{{ post.url }}">{{ post.title }}</a>
-		<p>{{ post.excerpt | strip_html }}</p>
-	</li>
-	{% endfor %}
-</ul>
+    <p>{{ site.intro }}</p>
+
+    {% assign sortedTags = site.array %}{% assign prevMin = -1 %}{% for _ in site.tags %}{% assign min = -1 %}{% for tag in site.tags %}{% assign size = tag[1] | size %}{% if min == -1 or size < min %}{% if size > prevMin %}{% assign min = size %}{% endif %}{% endif %}{% endfor %}{% if min > prevMin %}{% for tag in site.tags %}{% assign size = tag[1] | size %}{% if size == min %}{% assign sortedTags = sortedTags | unshift: tag %}{% endif %}{% endfor %}{% assign prevMin = min %}{% endif %}{% endfor %}
+    <h2>Well-Explored Topics</h2>
+    <nav class="tags">
+      <ul>
+        {% for tag in sortedTags %}{% assign size = tag[1] | size %}{% if forloop.index <= 18 %}
+          <li><a href="{{ site.baseurl }}/tags/{{ tag[0] | slugify }}">{{ tag[0] }}{% if size > 1 %} ({{ size }}){% endif %}</a></li>
+        {% endif %}{% endfor %}
+      </ul>
+    </nav>
+
+    <h2>Look Me Up</h2>
+    {% include social.html %}
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-11 small-centered medium-8 large-6 columns">
+    <h2>Observations</h2>
+    <ul class="posts">
+      {% for post in site.posts %}
+      <li>
+        <span>{{ post.date | date_to_string }}</span>
+        <a href="{{ post.url }}">{{ post.title }}</a>
+        <p>{{ post.excerpt | strip_html }}</p>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+
+<div class="row">
+  <footer class="small-11 small-centered medium-8 large-6 columns">
+    <p class="copy">{{ site.copy }}</p>
+  </footer>
+</div>

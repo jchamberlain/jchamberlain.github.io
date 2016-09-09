@@ -1,38 +1,41 @@
----
-layout: base
----
-		<div id="container" class="row" data-equalizer data-equalize-on="medium">
-			<div id="content" class="small-12 medium-8 medium-push-4 columns" data-equalizer-watch>
-				{{ content }}
-			</div>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.name }}</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-			<div id="sidebar" class="small-12 medium-3 medium-pull-8 columns" data-equalizer-watch>
-				<header>
-					<h2><a href="{{ site.baseurl }}/">{{ site.name }}</a></h2>
-					<span class="caption">Of the west</span>
-				</header>
+    <!-- syntax highlighting CSS -->
+    <link rel="stylesheet" href="{{ site.baseurl }}/css/syntax.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/foundation/6.2.3/foundation.min.css">
 
-				<p>I'm a simple developer residing in Turlock, California, where the soil is rich, the people kind, and the air hazy.</p>
-{% assign sortedTags = site.array %}{% assign prevMin = -1 %}{% for _ in site.tags %}{% assign min = -1 %}{% for tag in site.tags %}{% assign size = tag[1] | size %}{% if min == -1 or size < min %}{% if size > prevMin %}{% assign min = size %}{% endif %}{% endif %}{% endfor %}{% if min > prevMin %}{% for tag in site.tags %}{% assign size = tag[1] | size %}{% if size == min %}{% assign sortedTags = sortedTags | unshift: tag %}{% endif %}{% endfor %}{% assign prevMin = min %}{% endif %}{% endfor %}
-				<h3>Well-Explored Topics</h3>
-				<nav class="tags">
-					<ul>
-						{% for tag in sortedTags %}{% assign size = tag[1] | size %}{% if forloop.index <= 20 %}
-							<li><a href="{{ site.baseurl }}/tags/{{ tag[0] | slugify }}">{{ tag[0] }}{% if size > 1 %} ({{ size }}){% endif %}</a></li>
-						{% endif %}{% endfor %}
-					</ul>
-				</nav>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ site.baseurl }}/css/main.css">
 
-				<nav class="external">
-					<ul>
-						<li class="fi-social-github"><a href="https://github.com/jchamberlain">jchamberlain</a></li>
-						<li class="fi-social-twitter"><a href="https://twitter.com/jchmbrln">jchmbrln</a></li>
-						<li class="fi-social-linkedin"><a href="https://www.linkedin.com/in/joshua-chamberlain">joshua-chamberlain</a></li>
-					</ul>
-				</nav>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 
-				<div class="footer">
-					&copy; Joshua Chamberlain
-				</div class="footer">
-			</div>
-		</div>
+    {% seo %}
+  </head>
+  <body>
+{% for tag in site.tags %}{% assign found = 0 %}{% for tagpage in site.tagpages %}{% if tagpage.tag == tag[0] %}{% assign found = 1 %}{% endif %}{% endfor %}{% if found == 0 %}<p><strong>Missing tag page for "{{ tag[0] }}"!</strong></p>{% endif %}{% endfor %}{% for tagpage in site.tagpages %}{% assign found = 0 %}{% for tag in site.tags %}{% if tagpage.tag == tag[0] %}{% assign found = 1 %}{% endif %}{% endfor %}{% if found == 0 %}<p><strong>Tag page for nonexistent tag "{{ tagpage.tag }}"!</strong></p>{% endif %}{% endfor %}
+    <div id="container" class="row">
+
+      {{ content }}
+
+    </div>
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-17712777-1', 'auto');
+  ga('send', 'pageview');
+
+  </script>
+  </body>
+</html>

@@ -15,17 +15,9 @@ h1, h2, h3, ul.posts li a {
 }
 h1 {
     color: #696969;
-    margin-bottom: 10px;
+    margin: 1em 0 0.2em 0;
     font-size: 2em;
     font-weight: normal;
-}
-h1.home {
-    margin-bottom: 5px;
-    font-weight: bold;
-    font-size: 2.5em;
-    text-transform: uppercase;
-    color: #666666;
-    border-bottom: 1px solid #E6E6E6;
 }
 h2 {
     font-size: 1.9em;
@@ -38,55 +30,24 @@ a:hover {
     color: #B3B3B3;
     text-decoration: underline;
 }
-
-#sidebar {
-    padding-bottom: 5em;
-    background-color: #34495e;
-    color: #fff;
-}
-#sidebar h2 {
-    text-align: right;
-    text-transform: uppercase;
-    font-weight: bold;
-}
-#sidebar h2 a, #sidebar h2 a:hover {
-    color: #fff;
-    text-decoration: none;
-}
-#sidebar h3 {
-    margin-top: 2em;
-    color: #6C7E8F;
-    font-size: 1.5em;
-}
-#sidebar header {
-    margin-bottom: 1.5em;
-}
-#sidebar p {
-    font-size: 1.1em;
-}
 nav ul {
     padding:0;
-    margin: 1em;
+    margin: 0 0 1em 0;
     list-style-type: none;
     line-height: 1.5em;
 }
-#sidebar nav ul a, #sidebar nav ul a:link, #sidebar nav ul a:active {
-    color: #fff;
+nav ul li {
+    display: inline-block;
+    width: 32%;
+    text-align: center;
 }
-nav ul.external li::before {
+nav.external ul li::before {
     margin-right: 0.5em;
     font-size: 1.5em;
     vertical-align: middle;
 }
-nav ul.external li a {
+nav.external ul li a {
     vertical-align: middle;
-}
-#sidebar .footer {
-    position: absolute;
-    bottom: 0.5em;
-}
-#content.post h1 {
-    margin-top: 1em;
 }
 article {
     font-size: 1.1em;
@@ -117,6 +78,7 @@ ul.posts {
     list-style-type: none;
 }
 ul.posts li span {
+    margin-right: 0.4em;
     padding: 0.2em 0.4em;
     vertical-align: middle;
     font-size: 0.8em;
@@ -127,13 +89,41 @@ ul.posts li a {
     vertical-align: middle;
     font-size: 1.4em;
 }
-span.caption {
-    text-align: right;
-    display: block;
-    font-size: 0.9em;
-}
 .post-tags {
   text-align: right;
+}
+#top {
+    margin-bottom: 2em;
+    padding-bottom: 2em;
+    border-bottom: 1px solid #ccc;
+}
+#top.short {
+    padding-bottom: 0;
+}
+#top h1 {
+    margin:0;
+    text-transform: uppercase;
+}
+#top h2 {
+    font-size: 1.2em;
+}
+#top header {
+    margin: 1em 0 0 0;
+    padding: 0 0 1em 0;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+}
+#top.short header {
+    border-bottom: none;
+}
+#top .caption {
+    display: block;
+    font-size: 0.9em;
+    letter-spacing: 0.3em;
+    text-transform: lowercase;
+}
+#top p {
+    margin: 2em;
 }
 footer {
     margin-top: 2em;
@@ -142,14 +132,6 @@ footer {
 }
 footer h2 {
     font-size: 1.7em;
-}
-footer ul {
-    margin: 1em 0;
-}
-footer ul li {
-    display: inline-block;
-    width: 32%;
-    text-align: center;
 }
 footer .copy {
     text-align: center;

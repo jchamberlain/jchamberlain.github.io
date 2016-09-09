@@ -1,5 +1,5 @@
 ---
-layout: base
+layout: default
 ---
 <div class="row">
   <div id="content" class="post small-11 small-centered medium-8 large-6 columns">
@@ -17,20 +17,4 @@ layout: base
     </div>
   </div>
 </div>
-<div class="row">
-  <footer class="small-12 medium-8 medium-centered large-6 large-centered columns">
-    <h2>Joshua Chamberlain</h2>
-    <p>I'm a simple developer residing in Turlock, California, where the soil is rich, the people kind, and the air hazy.</p>
-    <p><a href="{{ site.baseurl }}/">&#8617; Go back to read some more</a> or drop me a line:</p>
-
-    <nav class="external">
-      <ul class="external">
-        <li class="fi-social-github"><a href="https://github.com/jchamberlain">jchamberlain</a></li>
-        <li class="fi-social-twitter"><a href="https://twitter.com/jchmbrln">jchmbrln</a></li>
-        <li class="fi-social-linkedin"><a href="https://www.linkedin.com/in/joshua-chamberlain">joshua-chamberlain</a></li>
-      </ul>
-    </nav>
-
-    <p class="copy">All content copyright Joshua Chamberlain &copy; 2016</p>
-  </footer>
-</div>
+{% include post_footer.html %}

@@ -1,4 +1,7 @@
 name: Zephyri
+caption: of the west
+intro: My name is Joshua Chamberlain. I'm a simple developer residing in Turlock, California, where the soil is rich, the people kind, and the air hazy.
+copy: All content copyright Joshua Chamberlain &copy; 2016
 markdown: kramdown
 highlighter: rouge
 baseurl: ''
