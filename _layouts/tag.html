@@ -5,7 +5,7 @@ layout: default
 <div class="row">
   <div id="top" class="short small-11 small-centered medium-8 large-6 columns">
     <header>
-      <h1>{{ page.tag }}</h1>
+      <h1>{% if page.title %}{{ page.title }}{% else %}{{ page.tag }}{% endif %}</h1>
       <span class="caption">what I think about it</span>
     </header>
   </div>

@@ -2,7 +2,7 @@
 layout: post
 title:  Docker Lets Me Be Ignorant
 date:   2016-09-08
-tags: [devops, docker, microservices]
+tags: [devops, docker, microservices, rackspace]
 excerpt: As a full-time full-stack developer, I have enough on my plate. I'm sure you're in the same boat.
 ---
 
