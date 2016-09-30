@@ -64,10 +64,13 @@ article pre {
     margin: 1em 2em;
 }
 article code {
-    font-size: 0.9em;
+    font-size: 0.8em;
+    padding: .125rem .2rem 0;
+    vertical-align: middle;
 }
 article pre code {
     display: block;
+    overflow: scroll;
     padding: 0.7em;
     background-color: #333;
     font-size: 1em;
