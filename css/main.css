@@ -140,3 +140,6 @@ footer .copy {
     text-align: center;
     color: #ADADAD;
 }
+#disqus_thread {
+    margin-top: 1em;
+}
