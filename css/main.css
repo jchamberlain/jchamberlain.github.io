@@ -2,12 +2,12 @@ body {
     font-family: Lato, Helvetica Neue,Helvetica,Roboto,Arial,sans-serif;
     color: #424242;
 }
-span.time, span.author {
+span.time, span.author, span.category {
     color: #ADADAD;
     margin-bottom: 5px;
     font-size: 12px;
 }
-span.author::before {
+span.author::before, span.category::before {
     content: " – ";
 }
 h1, h2, h3, ul.posts li a {
@@ -21,6 +21,9 @@ h1 {
 }
 h2 {
     font-size: 1.9em;
+}
+h3 {
+    font-size: 1.6em;
 }
 a, a:link, a:active {
     text-decoration: none;
@@ -70,10 +73,15 @@ article code {
 }
 article pre code {
     display: block;
-    overflow: scroll;
+    overflow-x: auto;
     padding: 0.7em;
     background-color: #333;
+    color: #fff;
     font-size: 1em;
+}
+img.float-left, img.float-right {
+    border: 1px solid #ddd;
+    margin: 1em 0 1em 0.5em;
 }
 ul.posts {
     margin: 0;
