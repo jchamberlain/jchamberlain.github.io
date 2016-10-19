@@ -185,3 +185,6 @@ Congratulations! You've successfully entered the world of programming. We'll sta
 
 If it didn't work, or if you have questions, leave a comment below.
 
+<section class="callout secondary">
+  <p>Ready to keep going? Continue at <a href="/2016/building-a-gif-generator-in-go-part-2/">Part II</a>.</p>
+</section>
