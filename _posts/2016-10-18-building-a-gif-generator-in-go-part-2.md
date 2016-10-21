@@ -208,3 +208,7 @@ func main() {
 ```
 
 Compile it with `go install`, and then try out the different options. For practice, add a few more `fmt.Println()` calls to display the user input, or add a few more arguments to accept. In the next lesson we'll do something with all these settings!
+
+<section class="callout secondary">
+  <p>Ready to keep going? Finish your GIF generator in <a href="/2016/building-a-gif-generator-in-go-part-3/">Part III</a>.</p>
+</section>
