@@ -10,6 +10,7 @@ After writing about [how to handle time in various databases](/2016/three-rules-
 
 ## Generate some dates
 Let's make a million timestamps and a million dates along with some fake data:
+
 ```sql
 CREATE TABLE timestamps AS
 SELECT to_timestamp(floor(1420099200 + random() * 86400 * 365)) AS timestamp, floor(random() * 10000) AS value
@@ -24,6 +25,7 @@ The dates will be spread throughout 2015, and the values will be between 0 and 1
 
 ## Clock the queries
 Let's get the unique months in each set:
+
 ```sql
 SELECT DISTINCT extract(month from timestamp)
 FROM timestamps;
@@ -35,6 +37,7 @@ FROM dates;
 ```
 
 Sum the values in the first six months:
+
 ```sql
 SELECT SUM(value)
 FROM timestamps
@@ -48,6 +51,7 @@ WHERE date BETWEEN '2015-01-01' AND '2015-06-30';
 ```
 
 Sum all values grouped by month:
+
 ```sql
 SELECT extract(month from timestamp) AS month, SUM(value)
 FROM timestamps
@@ -66,6 +70,7 @@ Mostly it's a close call, but that huge difference in the last test seems odd to
 
 ## Is it the storage, or the timezone?
 Maybe there's some extra processing in addition to the extra size of timestamps. Let's remove timezones from the equation while keeping the timestamps by creating and querying another table:
+
 ```sql
 CREATE TABLE timestamps_2 AS
 SELECT to_timestamp(floor(1420099200 + random() * 86400 * 365))::timestamp AS timestamp, floor(random() * 10000) AS value

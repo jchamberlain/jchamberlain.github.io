@@ -23,6 +23,7 @@ Use this to get yourself motivated and off the ground, and then go read a more t
 The first step is to install Go. You'll get a command line tool that lets you run things like `go install` to compile your code, and the whole standard library of built-in packages.
 
 Start by downloading the appropriate Go installer from <a href="https://golang.org/dl/" target="_blank">golang.org/dl</a>. Or if you're on a Mac and already have <a href="http://brew.sh/index.html" target="_blank">Homebrew</a> installed, you can run `brew install go` instead. Follow the instructions and open a command line when you're done. Run `go version` to make sure it's installed correctly. You should see something like this:
+
 ```
 $ go version
 go version go1.7 darwin/amd64
@@ -32,18 +33,23 @@ Next you'll need to setup a "workspace"–a folder to hold your code, code you'v
 
 ### Mac workspace
 Create a folder in your home directory. Here I'll call it "go", but use any name you want.
+
 ```
 $ mkdir ~/go
 ```
+
 Open or create the file ".bash_profile" in your home directory, and add the following lines at the end (changing "go" to whatever name you used above):
+
 ```
 export GOPATH=~/go
 export PATH=$GOPATH/bin:$PATH
 ```
+
 The first line exports an environment variable telling Go to use that folder as your workspace. The second line updates your `$PATH` environment variable so your shell knows to look for binaries in your Go workspace, letting you more easily run the code you compile.
 
 ### Windows (10) workspace
 In Windows you need to do the same thing as on a Mac, just in a different way. Create a folder in your home directory. Here I'll call it "go", but use any name you want.
+
 ```
 C:\Users\IEUser> mkdir go
 ```
@@ -63,6 +69,7 @@ As I'm using a Mac myself, all the following command line examples will be for t
 The environment variables you've added above will apply to the next shell you open, **but haven't affected your current session**. Close and reopen your terminal.
 
 In your new terminal, run `go env`. In the output, you should see a "GOPATH" variable pointing to the directory you created:
+
 ```
 ...
 GOOS="darwin"
@@ -70,6 +77,7 @@ GOPATH="/Users/joshuachamberlain/go"
 GORACE=""
 ...
 ```
+
 If you don't see it, double-check the steps above. If you still don't see it, leave a comment below.
 
 
@@ -89,6 +97,7 @@ Since you're about to build your own package, create a new folder for your proje
 
 ### Imports and func main()
 Now open up a text editor. At the very top of the file, tell Go that this is the main sub-package of your project:
+
 ```go
 package main
 ```
@@ -99,11 +108,13 @@ The "main" package of any project is what Go turns into an executable program.
 </section>
 
 Next we'll skip a line and import a package called `fmt` from the standard library to help us print text:
+
 ```go
 import "fmt"
 ```
 
 The `import` command can also import multiple packages at the same time:
+
 ```go
 import (
     "fmt"
@@ -112,6 +123,7 @@ import (
 ```
 
 But where it all begins is a function called "main". The "main" package must have a "main" function for Go to call to start it all off. Skip a line and add one that prints a line of text:
+
 ```go
 func main() {
     fmt.Println("This will be a GIF generator!")
@@ -126,6 +138,7 @@ Go is calling `main()` for us, but we're also calling a function ourselves: `Pri
 </section>
 
 Let's look at it all together:
+
 ```go
 package main
 
@@ -138,18 +151,21 @@ func main() {
     fmt.Println("This will be a GIF generator!")
 }
 ```
+
 Save this file as `main.go` in your package's folder.
 
 ## Compiling and running Go code
 Now at last we can compile our code. The Go compiler will take our code along with whatever libraries/packages we're using, make sure it's valid, and convert it into an executable binary. The binary will automatically be put into `$GOPATH/bin` which, if you recall, we added to our `$PATH` so we could run it just like any other program on the command line.
 
 If you're not there already, go to your project's directory in a terminal. Then run `go install`.
+
 ```
 $ cd $GOPATH/src/github.com/jchamberlain/go-gif-generator/;
 $ go install;
 ```
 
 Oops! If you've followed my instructions exactly, you'll be seeing a compiler error:
+
 ```
 # github.com/jchamberlain/go-gif-generator
 ./main.go:5: imported and not used: "strings"
@@ -162,6 +178,7 @@ Go has refused to compile our code because we included the `strings` package unn
 </section>
 
 Let's remove "strings" from the import block. Our code should now look like this:
+
 ```go
 package main
 

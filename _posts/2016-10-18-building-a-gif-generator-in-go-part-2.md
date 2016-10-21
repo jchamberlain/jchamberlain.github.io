@@ -27,11 +27,13 @@ In part 3 we'll use variables that contain multiple values, but scalar types are
 
 ### Declaration & Assignment
 So how do you set the type of a variable, and how to you put a value into the box? Those two operations are known as "declaration" and "assignment". In Go, you declare a variable with the `var` keyword followed by a name and type:
+
 ```go
 var someVariable int
 ```
 
 You then assign a value (i.e., put something in the box) using the `=` operator:
+
 ```go
 someVariable = 5
 fmt.Println(someVariable)
@@ -39,6 +41,7 @@ fmt.Println(someVariable)
 ```
 
 Declaration and assignment may also be done at the same time:
+
 ```go
 var someVariable int = 5
 ```
@@ -50,6 +53,7 @@ Now we can pass our `someVariable` to functions like `fmt.Println()`, assign new
 </section>
 
 The same syntax is used for other types as well, but for `string` you'll need to enclose the value in quotes:
+
 ```go
 var someString string = "This is some text"
 ```
@@ -58,10 +62,12 @@ var someString string = "This is some text"
 To build on our analogy, the "box" of a variable is really a small piece of your computer's RAM. The variable's type decides how big the box is (how much RAM to use) and what's allowed in it.
 
 One special type of variable is called a "pointer". A pointer is also a small piece of RAM, but rather than having its own value it holds the memory address of another variable. In Go, pointers are assigned by putting an ampersand before the name of the variable to which you want to point. Compare the following declarations and assignments.
+
 ```go
 var aCopyOfSomeVariable int = someVariable
 var pointsToSomeVariable *int = &someVariable
 ```
+
 The first assigns the value of `someVariable` to `aCopyOfSomeVariable`. It's duplicating the value, and changes to one variable won't affect the other. The second creates a pointer to `someVariable`. Using `pointsToSomeVariable`, you can actually modify the contents of `someVariable`.
 
 <section class="callout secondary">
@@ -78,6 +84,7 @@ Our program needs to know three things:
 1. What to name the output file. 
 
 Above our `main()` function, let's declare three variables named "path", "delay", and "output".
+
 ```go
 var path, output string
 var delay int
@@ -89,6 +96,7 @@ func main() {
 As you can see, variable of the same type–in this case `string`–can be declared together so you don't have to write the type multiple times.
 
 Now how do we get values into these variables? We could just hard-code values in `main()`, like so:
+
 ```go
 func main() {
     path = "./some_folder/"
@@ -101,6 +109,7 @@ But that's no good because we'll often need to change them. We need a way to get
 
 ### The flag package
 Let's use command-line flags to accept arguments from the user. To start, at the top of your file import the `flag` package from the standard library.
+
 ```go
 import (
     "flag"
@@ -109,6 +118,7 @@ import (
 ```
 
 The `flag` package has a lot of functions, and you can read the docs at <a href="https://golang.org/pkg/flag/" target="_blank">golang.org/pkg/flag/</a>. We're going to use `StringVar()` and `IntVar()`. These do all the work of parsing user input, converting it to the desired type, and putting it into the variables we specify. We'll start with setting `path`.
+
 ```go
 func main() {
     flag.StringVar(&path, "p", "", "path to the folder containing images")
@@ -122,6 +132,7 @@ The arguments to `StringVar()` are:
 1. A description of the argument. This is used to automatically generate help messages for the user.
 
 Let's also set `output` and `delay`, defaulting to "output.gif" and 5 seconds. When we're done setting our arguments, we call `flag.Parse()` to parse the user input.
+
 ```go
 func main() {
     flag.StringVar(&path, "p", "", "path to the folder containing images")
@@ -130,6 +141,7 @@ func main() {
     flag.Parse()
 }
 ```
+
 That's it. Now the user can change our app's behavior on-the-fly. Put all the pieces together and try compiling.
 
 ### Validating user input
@@ -143,6 +155,7 @@ Go has the usual bag of comparison operators: `==`, `!=`, `<`, `<=`, `>`, `>=`. 
 </section>
 
 A conditional in Go is written as `if` followed by one or more conditions. Inside curly braces you put whatever code you want to run when the condition evaluates to `true`. In our case we write:
+
 ```go
 if path == "" {
    fmt.Println("A path is required")
@@ -161,6 +174,7 @@ Pretty simple: first, `flag.PrintDefaults()`–a function in the `flag` package�
 </section>
 
 Go gives us the boolean operators `&&` (and) and `||` (or) so that we can put multiple conditions in a single `if`. To check `delay`, we'll use `||`. We'll also not print the usage page this time:
+
 ```go
 if delay < 1 || delay > 10 {
    fmt.Println("delay must be between 1 and 10 inclusively")
@@ -175,6 +189,7 @@ In English this means, "if delay is less than 1 or greater than 10, complain to 
 
 ## Putting it all together
 Here's what our code should look like at this point:
+
 ```go
 package main
 
